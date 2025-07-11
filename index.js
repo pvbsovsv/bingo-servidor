@@ -67,7 +67,7 @@ app.get('/frases', (req, res) => {
   "Si la renovación es gratuita, no?",
   "Quiero poner una reclamación"
 ]
-    res.send(arrayFrases)
+    res.json(arrayFrases)
 })
 
 
