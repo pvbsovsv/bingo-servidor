@@ -1,4 +1,4 @@
-const express = require('express')
+
 const app = express()
 const port = 3000
 
@@ -67,12 +67,6 @@ app.get('/frases', (req, res) => {
   "Si la renovación es gratuita, no?",
   "Quiero poner una reclamación"
 ]
-  
-  
-  
-  
-  
-  
     res.send(arrayFrases)
 })
 
