@@ -77,6 +77,8 @@ app.get('/frases', (req, res) => {
     res.send(arrayFrases)
 })
 
+app.use(express.json()); // to parse JSON bodies!
+
 // POST frases
 app.post(('/frases', (req, res => {
   const {frase} = req.body;
