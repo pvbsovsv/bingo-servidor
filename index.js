@@ -81,14 +81,20 @@ app.get('/frases', (req, res) => {
 
 // POST frases
 app.post('/frases', (req, res) => {
-  const {frase} = req.body;
+  try {
+    const { frase } = req.body;
 
-  if (!frase || typeof frase !== 'string') {
-    return res.status(400).json({ error: 'Frase inválida' });
+    if (!frase || typeof frase !== 'string') {
+      return res.status(400).json({ error: 'Frase inválida' });
+    }
+
+    arrayFrases.push(frase);
+
+    res.status(201).json({ message: 'Frase añadida con éxito', frase });
+  } catch (error) {
+    console.error('Error in POST /frases:', error);
+    res.status(500).json({ error: 'Error interno del servidor' });
   }
-
-  arrayFrases.push(frase);
-  res.status(201).json({ message: 'Frase añadida con éxito', frase });
 });
 
 // Root
