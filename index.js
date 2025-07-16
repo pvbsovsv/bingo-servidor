@@ -7,6 +7,8 @@ const port = 3000;
 // Enable CORS for all origins
 app.use(cors());
 
+//get frases
+
 app.get('/', (req, res) => {
   res.send('')
 })
@@ -75,6 +77,22 @@ app.get('/frases', (req, res) => {
     res.send(arrayFrases)
 })
 
+// POST frases
+app.post(('/frases', (req, res => {
+  const {frase} = req.body;
+
+  if (!frase || typeof frase !== 'string') {
+    return res.status(400).json({ error: 'Frase inválida' });
+  }
+
+  arrayFrases.push(frase);
+  res.status(201).json({ message: 'Frase añadida con éxito', frase });
+})))
+
+// Root
+app.get('/', (req, res) => {
+  res.send('');
+});
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
