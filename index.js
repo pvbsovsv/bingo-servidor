@@ -10,12 +10,7 @@ app.use(express.json()); // to parse JSON bodies!
 
 //get frases
 
-app.get('/', (req, res) => {
-  res.send('')
-})
-app.get('/frases', (req, res) => {
-  
-  let arrayFrases =  [
+let arrayFrases = [
   "Esto es un timo",
   "Y la caja? la tiro?",
   "… hasta tengo el DNI!!!!",
@@ -74,9 +69,17 @@ app.get('/frases', (req, res) => {
   "Ya me buscaré la vida",
   "Si la renovación es gratuita, no?",
   "Quiero poner una reclamación"
-]
-    res.send(arrayFrases)
-})
+];
+
+// Now define your routes
+
+app.get('/', (req, res) => {
+  res.send('');
+});
+
+app.get('/frases', (req, res) => {
+  res.send(arrayFrases);
+});
 
 
 // POST frase
