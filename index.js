@@ -6,6 +6,7 @@ const port = process.env.PORT || 3000;
 
 // Enable CORS for all origins
 app.use(cors());
+app.use(express.json()); // to parse JSON bodies!
 
 //get frases
 
@@ -77,10 +78,9 @@ app.get('/frases', (req, res) => {
     res.send(arrayFrases)
 })
 
-app.use(express.json()); // to parse JSON bodies!
 
 // POST frases
-app.post(('/frases', (req, res => {
+app.post('/frases', (req, res) => {
   const {frase} = req.body;
 
   if (!frase || typeof frase !== 'string') {
@@ -89,7 +89,7 @@ app.post(('/frases', (req, res => {
 
   arrayFrases.push(frase);
   res.status(201).json({ message: 'Frase añadida con éxito', frase });
-})))
+});
 
 // Root
 app.get('/', (req, res) => {
