@@ -101,6 +101,21 @@ app.post('/frases', (req, res) => {
 });
 
 
+// Delete frases not yet 
+
+/* app.delete('/frases/:index', (req, res) => {
+  const index = parseInt(req.params.index, 10);
+
+  if (isNaN(index) || index < 0 || index >= arrayFrases.length) {
+    return res.status(400).json({ error: 'Índice inválido' });
+  }
+
+  const removed = arrayFrases.splice(index, 1); // Remove 1 item at position index
+
+  res.json({ message: 'Frase eliminada con éxito', fraseEliminada: removed[0] });
+}); */
+
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
