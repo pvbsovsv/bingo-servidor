@@ -79,7 +79,7 @@ app.get('/frases', (req, res) => {
 })
 
 
-// POST frases
+// POST frase
 app.post('/frases', (req, res) => {
   try {
     const { frase } = req.body;
