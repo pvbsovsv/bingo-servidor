@@ -72,7 +72,7 @@ let arrayFrases = [
 ];
 
 // Now define your routes
-
+//root 
 app.get('/', (req, res) => {
   res.send('');
 });
@@ -100,10 +100,6 @@ app.post('/frases', (req, res) => {
   }
 });
 
-// Root
-app.get('/', (req, res) => {
-  res.send('');
-});
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
